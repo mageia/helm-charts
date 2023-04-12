@@ -84,3 +84,20 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+persistent:
+  enabled: false
+  existingClaim:
+  size: 128Mi
+  accessModes:
+    - ReadWriteOnce
+  labels: {}
+  annotations: {}
+  storageClass:
+  volumeMode: ""
+  mountPath: /data
+  subPath:
+
+wg-web:
+  smtp: {}
+  oauth2: {}

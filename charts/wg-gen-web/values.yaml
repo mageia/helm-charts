@@ -98,8 +98,8 @@ persistent:
   mountPath: /data
   subPath:
 
-emptyDir:
-  sizeLimit: ""
+localDir:
+  hostPath: /etc/wireguard
 
 env:
   WG_CONF_DIR: /data

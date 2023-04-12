@@ -72,10 +72,6 @@ spec:
           persistentVolumeClaim:
             claimName: {{ if .Values.persistent.existingClaim }}{{ .Values.persistent.existingClaim }}{{- else }}{{ template "wg-gen-web.fullname" . }}{{- end }}
         {{- else }}
-          emptyDir:    
-          {{- if .Values.emptyDir.sizeLimit }}        
-            sizeLimit: {{ .Values.emptyDir.sizeLimit }}    
-          {{- else }}    
-            {}    
-          {{- end -}}    
+          hostPath:    
+            path: {{ .Values.localDir.hostPath }}
         {{- end -}} 

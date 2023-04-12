@@ -3,12 +3,12 @@ entries:
   wg-gen-web:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-04-12T12:17:46.90173808Z"
+    created: "2023-04-12T12:59:16.874764287Z"
     description: A Helm chart for Manage WireGuard configuration with a web interface
-    digest: 6ccea48d61181414dca589696a16538eaa290a7671713d67d3f78f14e59b3cdf
+    digest: 8834ba73f3aedb7032feca248b1097d3b23502d8bb1a709f5faf740eee2305e5
     name: wg-gen-web
     type: application
     urls:
     - https://mageia.github.io/helm-charts/wg-gen-web-0.1.0.tgz
     version: 0.1.0
-generated: "2023-04-12T12:17:46.898684631Z"
+generated: "2023-04-12T12:59:16.872467512Z"

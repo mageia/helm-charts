@@ -63,3 +63,19 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+      volumes:
+      {{- if .Values.extraVolumes }}    
+        {{ toYaml .Values.extraVolumes | nindent 8}}    
+      {{- end }}    
+        - name: config-storage-volume    
+        {{- if .Values.persistent.enabled }}    
+          persistentVolumeClaim:
+            claimName: {{ if .Values.persistent.existingClaim }}{{ .Values.persistent.existingClaim }}{{- else }}{{ template "wg-gen-web.fullname" . }}{{- end }}
+        {{- else }}
+          emptyDir:    
+          {{- if .Values.emptyDir.sizeLimit }}        
+            sizeLimit: {{ .Values.emptyDir.sizeLimit }}    
+          {{- else }}    
+            {}    
+          {{- end -}}    
+        {{- end -}} 

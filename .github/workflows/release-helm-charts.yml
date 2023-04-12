@@ -24,8 +24,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           charts_dir: charts
           charts_url: https://mageia.github.io/helm-charts
+          # branch: gh-pages
           owner: Mageia
-          branch: gh-pages
           commit_username: Mageia
           commit_email: yzg963@gmail.com
 

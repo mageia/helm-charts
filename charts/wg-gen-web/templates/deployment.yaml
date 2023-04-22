@@ -51,6 +51,20 @@ spec:
             - name: config-storage-volume
               mountPath: {{ .Values.persistent.mountPath }}
               subPath: {{ .Values.persistent.subPath }}
+          env:
+            {{- range $name, $value := .Values.env }}
+            - name: {{ $name }}
+              value: "{{ $value }}"
+            {{- end }}
+            {{- range $name, $value := .Values.oauth2 }}
+            - name: {{ $name }}
+              value: "{{ $value }}"
+            {{- end }}
+            {{- range $name, $value := .Values.smtp }}
+            - name: {{ $name }}
+              value: "{{ $value }}"
+            {{- end }}
+
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

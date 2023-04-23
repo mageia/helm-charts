@@ -1,0 +1,31 @@
+{{- if .Values.persistent.enabled -}}
+{{- if not .Values.persistent.existingClaim -}}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  {{- if .Values.persistent.annotations }}
+  annotations:
+{{ toYaml .Values.persistent.annotations | indent 4 }}
+  {{- end }}
+  labels:
+    {{- include "wg-access-server.labels" . | nindent 4 }}
+  name: {{ template "wg-access-server.fullname" . }}
+spec:
+  accessModes:
+{{ toYaml .Values.persistent.accessModes | indent 4 }}
+{{- if .Values.persistent.storageClass }}
+{{- if (eq "-" .Values.persistent.storageClass) }}
+  storageClassName: ""
+{{- else }}
+  storageClassName: "{{ .Values.persistent.storageClass }}"
+{{- end }}
+{{- end }}
+{{- if .Values.persistent.volumeMode }}
+  volumeMode: "{{ .Values.persistent.volumeMode }}"
+{{- end }}
+  resources:
+    requests:
+      storage: "{{ .Values.persistent.size }}"
+{{- end -}}
+{{- end -}}
+

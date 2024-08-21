@@ -1,12 +1,6 @@
 name: Release Helm Charts
 concurrency: release-helm
-
-on:
-  push:
-    branches:
-      - main
-    paths:
-      - "charts/**"
+on: { push: { branches: [main], paths: ["charts/**"] } }
 
 jobs:
   release:

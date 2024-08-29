@@ -2,6 +2,36 @@ apiVersion: v1
 entries:
   dify:
   - apiVersion: v2
+    appVersion: 0.7.2
+    created: "2024-08-29T04:02:35.717609718Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - postgres
+      version: 12.5.6
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - redis
+      version: 16.13.2
+    - condition: weaviate.enabled
+      name: weaviate
+      repository: https://weaviate.github.io/weaviate-helm
+      tags:
+      - vector
+      - search
+      version: 16.1.0
+    description: Instant cloud deployment for https://github.com/langgenius/dify.
+    digest: cf50789c2cfcfdb419b7d72b6505091d75d768eb94536d20925215c650ba1d07
+    name: dify
+    type: application
+    urls:
+    - https://mageia.github.io/helm-charts/dify-0.21.1.tgz
+    version: 0.21.1
+  - apiVersion: v2
     appVersion: 0.7.1
     created: "2024-08-21T13:24:07.954225012Z"
     dependencies:
@@ -34,9 +64,9 @@ entries:
   gin-backend:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-08-21T13:24:07.954609685Z"
+    created: "2024-08-29T04:02:35.717951696Z"
     description: A Helm chart for Kubernetes
-    digest: 3d97202b202a58705c9e10554f95da06fc4300ab939288d43bdc057a0ebb567a
+    digest: a8904d32977c47555e51c05ed7621bf403b005bc5291f7f477de1abf7f672113
     name: gin-backend
     type: application
     urls:
@@ -45,9 +75,9 @@ entries:
   wg-access-server:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-08-21T13:24:07.955085737Z"
+    created: "2024-08-29T04:02:35.718529043Z"
     description: A Helm chart for Kubernetes
-    digest: 53d5837e5acd689e9e5b57612bec01d6bec98b7352ef9e78b06c073320645842
+    digest: 3d72ba0555fe17dc85264d61a8b20ba3fd88b25020914654d54c9d97bfadb307
     name: wg-access-server
     type: application
     urls:
@@ -56,9 +86,9 @@ entries:
   wg-gen-web:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-08-21T13:24:07.955534959Z"
+    created: "2024-08-29T04:02:35.718959346Z"
     description: A Helm chart for Manage WireGuard configuration with a web interface
-    digest: 4ee0de352bbc3dcd5b89d59ef35db9aa85ae9503983156f6b9a3e1da4620748d
+    digest: 6d8da9f5938012028ea9eba92fe4985839459f9afc3c8c4126331a91d148c851
     name: wg-gen-web
     type: application
     urls:
@@ -67,12 +97,12 @@ entries:
   wg-json-api:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-08-21T13:24:07.955899585Z"
+    created: "2024-08-29T04:02:35.719295914Z"
     description: A Helm chart for Kubernetes
-    digest: 248db0a52e0caaae769cb86a1305c9447825ae808cf8e9a74d2e986f7a44da11
+    digest: 79523044c172f7932e6e54104f321a6545dab2dbd88c7ee49a530cc5e8fcf98e
     name: wg-json-api
     type: application
     urls:
     - https://mageia.github.io/helm-charts/wg-json-api-0.1.0.tgz
     version: 0.1.0
-generated: "2024-08-21T13:24:07.93855086Z"
+generated: "2024-08-29T04:02:35.7033263Z"
